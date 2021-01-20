@@ -9,14 +9,24 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>NextJS Authentication with Next-Auth</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        {!session && (
+          <>
+            Not Signed In! <br />
+            <button onClick={signIn}>Sign In</button>
+          </>
+        )}
+        {session && (
+          <>
+            Signed in as {session.user.email}. Hello {session.user.name}! <br />
+            <p>You just access to some secret stuff! y'know?</p>
+            <button onClick={signOut}>Sign Out</button>
+          </>
+        )}
       </main>
     </div>
   );
