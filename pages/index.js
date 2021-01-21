@@ -24,6 +24,7 @@ export default function Home() {
           <>
             Signed in as {session.user.email}. Hello {session.user.name}! <br />
             <p>You just got access to some secret stuff! y'know?</p>
+            <Link href="/secret">Check it out!!</Link>
             <button onClick={signOut}>Sign Out</button>
           </>
         )}
