@@ -23,7 +23,7 @@ export default function Home() {
         {session && (
           <>
             Signed in as {session.user.email}. Hello {session.user.name}! <br />
-            <p>You just access to some secret stuff! y'know?</p>
+            <p>You just got access to some secret stuff! y'know?</p>
             <button onClick={signOut}>Sign Out</button>
           </>
         )}
